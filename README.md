@@ -1,6 +1,6 @@
 # RailsSimpleBackupRestore
 
-TODO: Write a gem description
+A simple backup/restore gem for Rails (restore not implemented yet).
 
 ## Installation
 
@@ -18,7 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a file config/backup_files with, for example :
+
+    public/system/**/*
+
+In your controller:
+
+    def backup
+      send_data SimpleBackup.backup.read, :filename => "Backup.zip"
+    end
 
 ## Contributing
 
