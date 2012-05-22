@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["contact@ouvrages-web.fr"]
   gem.description   = %q{A simple backup/restore gem for Rails}
   gem.summary       = %q{Backup the database and custom paths into a single file and allow restore}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/ouvrages/rails_simple_backup_restore"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
