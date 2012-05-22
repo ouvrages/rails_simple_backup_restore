@@ -5,14 +5,16 @@ A simple backup/restore gem for Rails.
 How it works:
 
 `SimpleBackup.backup`:
+
 * the database is dumped to `db/data.yml` with [yaml_db](http://rubygems.org/gems/yaml_db)
 * a temporary zip file is created with:
-** `config/backup_version`
-** `db/data.yml`
-** all files listed in `config/backup_files` (each line being expanded with `Dir[line_of_backup_files]`)
+  * `config/backup_version`
+  * `db/data.yml`
+  * all files listed in `config/backup_files` (each line being expanded with `Dir[line_of_backup_files]`)
 * the temporary file object is returned (it may already have been removed from disk, but you can `#read` it)
 
 `SimpleBackup.restore(file)`:
+
 * check that the file is a ZIP and contains the same `config/backup_version`
 * delete all files listed in `config/backup_files` (each line being expanded with `Dir[line_of_backup_files]`)
 * extract all files included in the ZIP file
